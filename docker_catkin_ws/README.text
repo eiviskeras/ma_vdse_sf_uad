@@ -1,0 +1,2 @@
+This Dockerfile is based on the tutorial in https://amirdarwesh.com/posts/2019/09/13/ROS-Docker-Vscode/
+The source-folders are obtained and installed according to the tutorial https://github.com/epan-utbm/utbm_robocar_dataset/tree/baselines/launch

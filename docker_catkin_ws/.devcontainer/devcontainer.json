@@ -1,0 +1,22 @@
+{
+    "name": "utbm-dataset-workspace",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "ms-vscode.cpptools",
+        "ms-iot.vscode-ros"
+    ],
+    "runArgs": [
+        "--cap-add=SYS_PTRACE",
+        "--security-opt", "seccomp=unconfined",
+        "-v",
+        "${env:HOME}${env:USERPROFILE}/.ssh:/root/.ssh",
+        "-v",
+        "${localWorkspaceFolder}/../docker_sick_ws:/sick_ws"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "bash /catkin_ws/src/docker-setup.sh",
+    "workspaceMount": "src=${localWorkspaceFolder}/../docker_catkin_ws/src/,dst=/catkin_ws/src/,type=bind,consistency=cached",
+    "workspaceFolder": "/catkin_ws"
+}
